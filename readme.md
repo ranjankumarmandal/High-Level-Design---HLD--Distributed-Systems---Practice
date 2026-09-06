@@ -1,4 +1,4 @@
-# High Level Design - HLD - Deep Dive - Practice
+# High Level Design - HLD - Distributed Systems - Deep Dive - Practice
 
 ## About
 
