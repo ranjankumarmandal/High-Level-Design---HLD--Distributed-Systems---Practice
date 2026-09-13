@@ -10,9 +10,24 @@ Functional Requirement:
 
 Non-Functional Requirement:
 ---------------------------
+- Low latency
+- High availability
+- Massive scale
+- (And so on...)
 
 Assumptions:
 ------------
+- 100M new short URLs creation per month
+-- 100M / 30 / 86400 sec = 39 creations per seconds
+-- Peak: 10x: 390 creations per seconds
+
+- Redirect traffic: 100 redirects for every single creation
+-- 39 * 100 = 3900 redirects per second on average
+-- Peak: 10x: 390000 redirects per second
+
+- Storage: 1 URL record consumes approx 1KB after including the URL, metadata, indexes, indexes, and database overhead
+-- 100M records times 1KB = 100 GB per month
+-- 100GB * 12 = 1.2 TB per year storage requirement
 
 API Design:
 -----------
