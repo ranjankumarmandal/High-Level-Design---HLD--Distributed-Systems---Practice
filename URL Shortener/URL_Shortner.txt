@@ -36,6 +36,7 @@ GET /{shortCode}
 
 DB Schema:
 ----------
+- Distributed key-value or wide-column DB: DynamoDB or Cassandra: (Table: short_code(PK), long_Url, created_at, expires_at, status, owner_id, redirect_type, version, url_hash)
 
 HLD:
 ----
