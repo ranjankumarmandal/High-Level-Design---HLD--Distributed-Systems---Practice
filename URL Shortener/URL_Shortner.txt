@@ -1,0 +1,27 @@
+Functional Requirement:
+-----------------------
+- 100M new short URLs per month
+- A 100-to-1-ratio between redirects and URL creation
+- Links are permanent by default, with optional expiration
+- Users may optionally choose a custom alias
+- Basic asynchronous click analytics are required
+- Redirect availability and latency are more important than immediately consistent analytics
+- The service operates across multiple regions
+
+Non-Functional Requirement:
+---------------------------
+
+Assumptions:
+------------
+
+API Design:
+-----------
+
+DB Schema:
+----------
+
+HLD:
+----
+
+Edge Scenarios:
+---------------
