@@ -31,6 +31,8 @@ Assumptions:
 
 API Design:
 -----------
+POST /v1/urls
+GET /{shortCode}
 
 DB Schema:
 ----------
