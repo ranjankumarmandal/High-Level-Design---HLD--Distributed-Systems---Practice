@@ -1,0 +1,40 @@
+HLD:
+----
+
+Design a Kafka -> Flink -> OLAP pipeline.
+
+======================
+
+Functional Requirement:
+-----------------------
+- Source: Kafka
+- Data Engineering: Flink
+- Destination: OLAP
+
+Non-Functional Requirement:
+---------------------------
+- Low latency
+- High availability
+- Massive scale
+- (And so on...)
+
+Assumptions:
+------------
+- Average ingestion: 50k events / second
+- Peak ingestion: 250k events / second
+- Average event size: 1KB
+- Peak multiplier: 5
+- Kafka retention: 7 days
+- Kafka replication factor: 3
+- OLAP query traffic: 5k queries / second average and 20K at peak
+
+DB Schema:
+----------
+Kafka: Topics: raw_events, validated_events, enriched_events, aggregate_updates, dead_letter_events
+Object storage with Apache Iceberg
+ClickHouse OLAP Store
+PostgreSQL: Metadata store
+
+HLD:
+----
+Attached image.
