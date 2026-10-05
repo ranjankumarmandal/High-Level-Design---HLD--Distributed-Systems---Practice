@@ -32,8 +32,8 @@ DB Schema:
 ----------
 Kafka: Topics: raw_events, validated_events, enriched_events, aggregate_updates, dead_letter_events
 Object storage with Apache Iceberg
-ClickHouse OLAP Store
-PostgreSQL: Metadata store
+ClickHouse MPP OLAP DB Store
+PostgreSQL (If required, or else we can utilise object storage): Metadata store
 
 HLD:
 ----
