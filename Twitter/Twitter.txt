@@ -16,6 +16,14 @@ Non-Functional Requirement:
 
 Assumptions:
 ------------
+- 300M active users monthly
+-- 100M active users daily
+- 50M tweets per day
+- 2B home-timeline requests per day
+- An average user follows 200 accounts
+- A timeline response contains 20 tweets
+- Normal peak: 10x than the daily average
+- Most traffic consists of reads rather than writes
 
 API Design:
 -----------
