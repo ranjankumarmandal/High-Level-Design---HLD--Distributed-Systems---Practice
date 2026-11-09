@@ -27,6 +27,15 @@ Assumptions:
 
 API Design:
 -----------
+POST /v1/tweets
+DELETE /v1/tweets/{tweetId}
+GET /v1/tweets/{tweetId}
+GET /v1/users/{userId}/home-timeline?cursor={cursor}&limit=20
+PUT /v1/users/{userId}/following/{targetUserId}
+DELETE /v1/users/{userId}/following/{targetUserId}
+GET /v1/users/{userId}/followers?cursor={cursor}&limit=50
+GET /v1/users/{userId}/following?cursor={cursor}&limit=50
+POST /v1/media/upload-url
 
 DB Schema:
 ----------
