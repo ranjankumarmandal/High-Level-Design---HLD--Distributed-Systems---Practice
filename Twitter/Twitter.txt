@@ -1,5 +1,11 @@
 Functional Requirement:
 -----------------------
+- Users can create and delete text tweets.
+- Tweets may reference to images and videos.
+- Users can follow and unfollow other users.
+- Users can view home timeline and other user's timeline.
+- Timeline ordering is initially reverse chronological.
+- Like, replies, search, recommendations, and others. (Let's skip this part as of now)
 
 Non-Functional Requirement:
 ---------------------------
