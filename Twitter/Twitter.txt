@@ -39,6 +39,8 @@ POST /v1/media/upload-url
 
 DB Schema:
 ----------
+- User DB: PostgreSQL: {user: user_id, username, display_name, bio, profile_image_key, created_at, status}
+- Tweet DB: Cassandra or DynamoDB: {tweet: tweet_id, author_id, text, media_ids, reply_to_tweet_id, created_at, deleted, author_id}
 
 HLD:
 ----
