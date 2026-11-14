@@ -33,3 +33,4 @@ DB Schema:
 
 HLD:
 ----
+Please check the image for HLD.
