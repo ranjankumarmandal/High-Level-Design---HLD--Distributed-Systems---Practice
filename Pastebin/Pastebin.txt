@@ -21,6 +21,9 @@ Assumptions:
 
 API Design:
 ------------
+POST /pastes
+GET /pastes/{id}
+GET /{id}
 
 DB Schema:
 ----------
