@@ -27,6 +27,9 @@ GET /{id}
 
 DB Schema:
 ----------
+- RDBMS: PostgreSQL or MySQL: {pastes: id, object_key, created_at, expires_at, size_bytes, status}
+- Object Storage: AWS S3: key such as pastes/A7kP2mQ9xB; value is the raw text bytes
+- Distributed Cache: Redis Cache: key such as pastes/A7kP2mQ9xB; value contains content and expiration metadata
 
 HLD:
 ----
