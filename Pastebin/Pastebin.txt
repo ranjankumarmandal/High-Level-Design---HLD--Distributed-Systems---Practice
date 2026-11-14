@@ -1,5 +1,8 @@
 Functional Requirement:
 -----------------------
+- Accept text and an optional expiration time; return a paste ID and short URL.
+- Return the paste text, or 404 if it doesn't exist or has expired.
+- Open a human friendly page displaying the paste.
 
 Non-Functional Requirement:
 ---------------------------
