@@ -13,6 +13,11 @@ Non-Functional Requirement:
 
 Assumptions:
 -------------
+- Write: 1M paste per day = 12 writes / second on average.
+- Read: 20M paste views per day = 231 reads / second on average.
+- Peak: Assume 10 times the average: roughly 120 writes / second and 2300 reads / second.
+- Content Storage: At an average of 10KB per paste, writes add about 10GB / day, or 3.65TB / year before replication, compression, and expiration.
+- Read Traffic: 20M x 20KB = 200GB / day of paste content. At the assumed peak, content delivery is rougly 23 MP / second.
 
 API Design:
 ------------
