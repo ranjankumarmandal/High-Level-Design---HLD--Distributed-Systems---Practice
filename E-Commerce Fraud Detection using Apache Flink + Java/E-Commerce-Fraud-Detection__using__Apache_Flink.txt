@@ -41,3 +41,4 @@ DB Schema:
 
 HLD:
 ----
+Look for image attached inside same folder.
