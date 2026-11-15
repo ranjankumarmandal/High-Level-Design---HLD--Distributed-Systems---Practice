@@ -15,6 +15,11 @@ Non-Functional Requirement:
 
 Assumptions:
 ------------
+- Average traffic: 10M / day = 116 transactions / second.
+- Heavy traffic: 10x on average: 1160 transactions / second. I would provision for roughly 3000 / second to leave room for bursts and replay.
+- Parallelism: With 64 Kafka partitions, a 3000 / second burst averages about 47 events / second per partition. We can run multiple Flink task slots across workers, then raise partition count and task parallelism after load testing.
+- Event storage: At an assumed 1KB / event, 7 days of incoming events is bout 70GB, or 210GB with 3 Kafka replicas, before indexes and other overhead.
+- Slow versus busy periods: During normal traffic, fewer Flink workers can handle the load. At peak, scale workers based on Kafka consumer lag, processing latency, and checkpoint duration - not just CPU. Keep enough warm capacity that scaling does not begin only after the 500 ms deadline is missed.
 
 API Design:
 ------------
