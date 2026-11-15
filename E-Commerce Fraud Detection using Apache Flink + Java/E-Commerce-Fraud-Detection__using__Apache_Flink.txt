@@ -1,5 +1,10 @@
 Functional Requirement:
 ------------------------
+- Payment events are going to come from payment service through Apache Kafka payments topic, from where Apache Flink can consume events data and do stream processing to perform fraud detection.
+- Fraud service should perform asses operation.
+- Fraud service should retrieves a decision if the original request timed out or a caller needs to recocile its result.
+- Fraud service should give feedback.
+- An internal endpoint for publishing a versioned rule change.
 
 Non-Functional Requirement:
 ---------------------------
