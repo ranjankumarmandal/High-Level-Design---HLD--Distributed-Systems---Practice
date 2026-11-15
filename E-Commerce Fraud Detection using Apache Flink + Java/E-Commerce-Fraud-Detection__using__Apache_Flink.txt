@@ -30,6 +30,14 @@ PUT /v2/fraud/rules/{ruleId}
 
 DB Schema:
 ----------
+- Kafka: Durable event log: {transaction_id, customer_id, device_id, merchant_id, amount, currency, event_time, request_time}
+- Flink keyed state: Short lived detection data: {customer_id, window_start, transaction_count, amount_total, recent_transaction_ids}
+- Redis: Short lived decision lookup: Key decision:{transactionId} contains decision, reason_codes, rules_version, decided_at, and expires_at. The Fraud API uses it while waiting for Flink's result; it is not he long-term record.
+- PostgreSQL: Rules and decision audit:
+--- {fraud_rules: rule_id, version, rule_type, parameters, enabled, effective_at}
+--- {fraud_decisions: transaction_id, customer_id, decision, reason_codes, rules_version, decided_at}
+--- {fraud_feedback: feedback_id, transaction_id, outcome, recorded_at}
+- Object storage: S3: Flink checkpoints and longer-term event archive
 
 HLD:
 ----
