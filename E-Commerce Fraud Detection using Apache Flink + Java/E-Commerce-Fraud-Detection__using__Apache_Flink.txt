@@ -23,6 +23,10 @@ Assumptions:
 
 API Design:
 ------------
+POST /v1/fraud/assess
+GET /v1/fraud/decisions/{transactionId}
+POST /v1/fraud/feedback
+PUT /v2/fraud/rules/{ruleId}
 
 DB Schema:
 ----------
