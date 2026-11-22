@@ -1,5 +1,15 @@
 Functional Requirement:
 -----------------------
+- Request an upload URL and media ID. The client uploads the file directly to object storage.
+- Create a post using uploaded media IDs and a caption.
+- Fetch a post and its media URLs.
+- Delete a post.
+- Follow an account.
+- Unfollow an account.
+- Fetch the next page of the home feed.
+- Like a post.
+- Add a comment.
+- Analytics
 
 Non-Functional Requirement:
 ----------------------------
