@@ -20,6 +20,14 @@ Non-Functional Requirement:
 
 Assumptions:
 ------------
+- I assume 100M daily active users. Each requesting 20 feed pages per day, and 10M new posts per day.
+-- Feed traffic: 100M * 20 = 2B requests / day, or roughly 23000 requests / second on average.
+-- At a 10x busy hour or event spike, plan for roughly 230000 request / second.
+-- Post creation: 10M / day = 116 posts / second on average, or around 1200 / second at 10x peak.
+-- If each post contains an average of 5MB of original media, new originals require about 50TB / day, before processed and replication.
+-- If a feed page loads 20 media previews averaging 100KB each, that is about 4PB / day of preview delivery. The CDN must serve most of it, application servers should not proxy media.
+- Feed requests can be spread across stateless servers. Media uploads and downloads are parallelized through object storage and CDN infrastructure, processing workers scale independently, using a queue.
+- During quiet period, worker counts and service capacity can shrink. During spikes, autoscaling handles reads while queues absorb temporary write and fanout bursts.
 
 API Design:
 -----------
