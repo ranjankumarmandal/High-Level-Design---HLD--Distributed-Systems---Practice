@@ -31,6 +31,16 @@ Assumptions:
 
 API Design:
 -----------
+POST /media/uploads
+POST /posts
+GET /posts/{postId}
+DELETE /posts/{postId}
+POST /users/{userId}/follow
+DELETE /users/{userId}/follow
+GET /feed?cursor=...&limit=20
+POST /posts/{postId}/likes
+POST /posts/{postId}/comments
+GET /instagram/analytics
 
 DB Schema:
 ----------
