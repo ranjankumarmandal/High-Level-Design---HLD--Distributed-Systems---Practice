@@ -60,3 +60,4 @@ DB Schema:
 
 HLD:
 ----
+For HLD, check into the image attached inside this same folder
