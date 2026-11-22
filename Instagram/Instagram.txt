@@ -44,6 +44,19 @@ GET /instagram/analytics
 
 DB Schema:
 ----------
+- RDBMS DB: PostgreSQL, MySQL or other RDBMS: Sharded as needed: Good for user, post, follow, like, and comment records where uniqueness and transactional updates matter.
+-- uses: {user_id, username, display_name, is_private, created_at}
+-- follows: {follower_id, followed_id, created_at}
+-- posts: {post_id, author_id, caption, status, created_at}
+-- post_media: {media_id, post_d, object_key, media_type, processing_status, position}
+-- likes: {user_id, post_id, created_at}
+-- comments: {comments_id, post_id, author_id, body, created_at}
+
+- Distributed key=value or wide-column store: any NoSQL like Cassandra, etc.: Holds precomputed feed entries, partitioned by viewer so feed reads remain fast.
+-- feed_entries: {viewer_id, created_at, post_id, author_id}
+
+- Object Storage: AWS S3 or others.
+- Distributed Cache: Redis or others.
 
 HLD:
 ----
