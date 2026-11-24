@@ -35,6 +35,10 @@ GET /analytics
 
 DB Schema:
 -----------
+- Distributed NoSQL DB: Cassandra or others: {posts: post_id, author_id, body, media_ids, visibility, created_at, deleted_at}, {feed_entries: user_id, post_id, author_id, created_at, candidate_score}
+- Graph DB or RDBMS: PostgreSQL or others (like Neo4j, etc.): {follows: follower_id, followee_id, created_at}
+- Object Storage: AWS S3: For storing photos and videos outside the post DB.
+- Distributed Cache: Redis: To reduce repeated reads of popular posts and feed pages.
 
 HLD:
 ----
