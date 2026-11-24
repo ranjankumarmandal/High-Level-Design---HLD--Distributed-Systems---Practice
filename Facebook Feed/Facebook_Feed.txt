@@ -42,3 +42,4 @@ DB Schema:
 
 HLD:
 ----
+For HLD, please check the image inside this same folder.
