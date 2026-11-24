@@ -17,6 +17,11 @@ Non-Functional Requirement:
 
 Assumptions:
 -------------
+- Assuming 100M daily active users, each opening or refreshing the feed 10 times per day, and each author publishing one post per day.
+-- Feed reads: 100M * 10 / 86400 = 11600 requests / second on average.
+-- Feed writes: 100M / 86400 = 1160 posts / second on average.
+-- At a 5x peak, plan for roughly 58K feed  reads / second and 5.8K post writes/ second.
+-- If a response contains 20 posts, peak feed assembly may examine over 1M post references / second. We should batch post backups andspead requests across many stateless feed-service instances and storage shards.
 
 API Design:
 ------------
