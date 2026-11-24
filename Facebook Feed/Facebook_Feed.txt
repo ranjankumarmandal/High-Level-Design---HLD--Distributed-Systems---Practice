@@ -1,5 +1,12 @@
 Functional Requirement:
 ------------------------
+- Publish a post; return its ID after durable storage.
+- Return a page of ranked posts and a next-page cursor.
+- Fetch an individual post.
+- Delete a post and invalidate it in feeds.
+- Follow a user or page.
+- Unfollow a user of page.
+- Analytics
 
 Non-Functional Requirement:
 ----------------------------
