@@ -25,6 +25,13 @@ Assumptions:
 
 API Design:
 ------------
+POST /posts
+GET /feed/cursor=...&limit=20
+GET /posts/{postId}
+DELETE /posts/{postId}
+POST /users/{userId}/follow
+DELETE /users/[userId}/follow
+GET /analytics
 
 DB Schema:
 -----------
